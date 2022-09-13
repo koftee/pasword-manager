@@ -1,0 +1,28 @@
+import random
+
+letters = ["a","b","c","d","e","f","g","h","k","i","l","m","n","o","p","r","s","t","u","y","v","z","w","x","q"'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+symbols = ["*","?","-","=","!",".",":","(",")","[","]","%","+","$","é","<",">"]
+numbers = ["1","2","3","4","5","6","7","8","9","0"]
+
+print("Önerilerimiz",  "1- Şifreniz Sekiz karakterden fazla olmalı","2- Şifrenizde en az bir rakam, sembol ve büüyk harf bulunmalı", sep="\n")
+kacharf = int(input("kaç adet harf olsun: "))
+kacrakam = int(input("kaç adet rakam olsun: "))
+kacsembol = int(input("kaç adet sembol olsun olsun: "))
+
+pasword = []
+for i in range(0, kacharf):
+    pasword.append(random.choice(letters))
+for i in range(0, kacsembol):
+    pasword.append((random.choice(symbols)))
+for i in range(0, kacrakam):
+   pasword.append((random.choice(numbers)))
+
+random.shuffle(pasword)
+print(pasword)
+
+sifre=""
+
+for kelime in pasword:
+    sifre=kelime+sifre
+
+print(sifre)
